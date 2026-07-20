@@ -1,0 +1,179 @@
+# ========== 赛博朋克 ==========
+赛博朋克|neon-lit cyberpunk cityscape, volumetric fog, rain-slicked streets, holographic neon signs, high contrast pink and cyan, cinematic wide shot, 8k
+cyberpunk|neon-lit cyberpunk cityscape, volumetric fog, rain-slicked streets, holographic neon signs, high contrast pink and cyan, cinematic wide shot, 8k
+
+# ========== 宫崎骏/吉卜力 ==========
+宫崎骏|Studio Ghibli inspired, whimsical floating islands, lush greenery, soft pastel color palette, gentle warm sunlight, hand-drawn animation style, 4k
+ghibli|Studio Ghibli inspired, whimsical floating islands, lush greenery, soft pastel color palette, gentle warm sunlight, hand-drawn animation style, 4k
+
+# ========== 写实人像 ==========
+写实人像|photorealistic portrait, soft natural window light, shallow depth of field, Canon 85mm f/1.4, detailed skin texture, editorial fashion photography, 8k
+portrait|photorealistic portrait, soft natural window light, shallow depth of field, Canon 85mm f/1.4, detailed skin texture, editorial fashion photography, 8k
+
+# ========== 产品摄影 ==========
+产品白底图|minimalist product photography, pure white seamless background, soft even studio lighting, clean shadows, high-end commercial look, 8k
+product|minimalist product photography, pure white seamless background, soft even studio lighting, clean shadows, high-end commercial look, 8k
+
+# ========== 油画 ==========
+油画|oil painting on canvas, thick impasto brushstrokes, rich warm earth tones, Rembrandt lighting, dramatic shadows, classic fine art, 4k
+oil|oil painting on canvas, thick impasto brushstrokes, rich warm earth tones, Rembrandt lighting, dramatic shadows, classic fine art, 4k
+
+# ========== 水彩 ==========
+水彩|watercolor painting, soft washes, blending colors, textured paper, light and airy, botanical illustration style, 4k
+watercolor|watercolor painting, soft washes, blending colors, textured paper, light and airy, botanical illustration style, 4k
+
+# ========== 动漫 ==========
+动漫|anime style, vibrant cel-shaded colors, expressive eyes, dynamic action pose, sakura blossoms, energetic composition, japanese animation aesthetic, 4k
+anime|anime style, vibrant cel-shaded colors, expressive eyes, dynamic action pose, sakura blossoms, energetic composition, japanese animation aesthetic, 4k
+
+# ========== 极简 ==========
+极简|minimalist design, clean lines, negative space, soft pastel background, geometric composition, serene and calm, studio lighting, 8k
+minimalist|minimalist design, clean lines, negative space, soft pastel background, geometric composition, serene and calm, studio lighting, 8k
+
+# ========== 复古 ==========
+复古|vintage retro style, warm sepia tones, film grain, faded colors, old-fashioned typography, nostalgic mood, 4k
+vintage|vintage retro style, warm sepia tones, film grain, faded colors, old-fashioned typography, nostalgic mood, 4k
+
+# ========== 科幻 ==========
+科幻|sci-fi futuristic city, sleek metallic structures, glowing holographic displays, blue and orange neon, high-tech atmosphere, cinematic wide shot, 8k
+scifi|sci-fi futuristic city, sleek metallic structures, glowing holographic displays, blue and orange neon, high-tech atmosphere, cinematic wide shot, 8k
+
+# ========== 奇幻 ==========
+奇幻|epic fantasy landscape, towering ancient ruins, magical glowing crystals, misty valleys, dramatic sunset, vibrant colors, highly detailed, 8k
+fantasy|epic fantasy landscape, towering ancient ruins, magical glowing crystals, misty valleys, dramatic sunset, vibrant colors, highly detailed, 8k
+
+# ========== 电影感 ==========
+电影感|cinematic scene, dramatic lighting, deep shadows, lens flare, anamorphic widescreen, moody atmosphere, 35mm film grain, 4k
+cinematic|cinematic scene, dramatic lighting, deep shadows, lens flare, anamorphic widescreen, moody atmosphere, 35mm film grain, 4k
+
+# ========== 水墨风 ==========
+水墨风|traditional Chinese ink wash painting, flowing brushstrokes, monochrome with subtle indigo, misty mountains, rice paper texture, zen atmosphere, 4k
+ink|traditional Chinese ink wash painting, flowing brushstrokes, monochrome with subtle indigo, misty mountains, rice paper texture, zen atmosphere, 4k
+
+# ========== 蒸汽朋克 ==========
+蒸汽朋克|steampunk city, brass gears, steam engines, Victorian architecture, sepia tone, mechanical details, industrial revolution aesthetic, 4k
+steampunk|steampunk city, brass gears, steam engines, Victorian architecture, sepia tone, mechanical details, industrial revolution aesthetic, 4k
+
+# ========== 素描 ==========
+素描|pencil sketch, cross-hatching, detailed linework, graphite on textured paper, monochrome, academic drawing style, 4k
+sketch|pencil sketch, cross-hatching, detailed linework, graphite on textured paper, monochrome, academic drawing style, 4k
+
+# ========== 风景 ==========
+风景|landscape photography, majestic mountains, calm lake reflection, golden hour lighting, vivid colors, high resolution, 8k
+landscape|landscape photography, majestic mountains, calm lake reflection, golden hour lighting, vivid colors, high resolution, 8k
+
+# ========== 美食 ==========
+美食|food photography, top-down flat lay, colorful ingredients, natural daylight, shallow depth of field, appetizing presentation, 4k
+food|food photography, top-down flat lay, colorful ingredients, natural daylight, shallow depth of field, appetizing presentation, 4k
+
+# ========== 建筑 ==========
+建筑|architectural photography, modern minimalist building, clean geometric shapes, dramatic shadows, blue sky, wide-angle lens, 8k
+architecture|architectural photography, modern minimalist building, clean geometric shapes, dramatic shadows, blue sky, wide-angle lens, 8k
+
+# ========== 夜景 ==========
+夜景|night cityscape, long exposure, bokeh lights, reflective wet pavement, skyscrapers glowing, atmospheric mood, 8k
+night|night cityscape, long exposure, bokeh lights, reflective wet pavement, skyscrapers glowing, atmospheric mood, 8k
+
+# ========== 插画 ==========
+插画|digital illustration, flat vector art, vibrant colors, clean outlines, modern graphic design style, 4k
+illustration|digital illustration, flat vector art, vibrant colors, clean outlines, modern graphic design style, 4k
+
+# ========== 抽象 ==========
+抽象|abstract expressionism, bold splashes of color, chaotic energy, high contrast, textured canvas, emotional, 4k
+abstract|abstract expressionism, bold splashes of color, chaotic energy, high contrast, textured canvas, emotional, 4k
+
+# ========== 3D渲染 ==========
+3D渲染|3D render, isometric view, soft global illumination, vibrant colors, clay-like material, cute and playful, 4k
+3d|3D render, isometric view, soft global illumination, vibrant colors, clay-like material, cute and playful, 4k
+
+# ========== 恐怖 ==========
+恐怖|horror scene, dark atmospheric lighting, foggy graveyard, eerie shadows, low-angle shot, chilling mood, 4k
+horror|horror scene, dark atmospheric lighting, foggy graveyard, eerie shadows, low-angle shot, chilling mood, 4k
+
+# ========== 宗教艺术 ==========
+宗教艺术|religious renaissance painting, dramatic chiaroscuro, golden halos, rich jewel tones, classical composition, divine light, 4k
+renaissance|religious renaissance painting, dramatic chiaroscuro, golden halos, rich jewel tones, classical composition, divine light, 4k
+
+# ========== 时尚肖像 ==========
+时尚肖像|fashion portrait, elegant woman in modern dress, soft diffused studio lighting, magazine cover style, high fashion makeup, minimalist background, 8k
+fashion|fashion portrait, elegant woman in modern dress, soft diffused studio lighting, magazine cover style, high fashion makeup, minimalist background, 8k
+
+# ========== 都市女性 ==========
+都市女性|urban professional woman, confident posture, city skyline background, evening glow, sharp suit, power dressing, editorial photography, 8k
+urban|urban professional woman, confident posture, city skyline background, evening glow, sharp suit, power dressing, editorial photography, 8k
+
+# ========== 魅力光影 ==========
+魅力光影|dramatic silhouette of an elegant woman, warm golden backlight, graceful flowing dress, sensual but tasteful, fine art photography style, 4k
+glamour|dramatic silhouette of an elegant woman, warm golden backlight, graceful flowing dress, sensual but tasteful, fine art photography style, 4k
+
+# ========== 东方美人 ==========
+东方美人|traditional Chinese beauty, classical hanfu, gentle expression, blooming peonies, soft watercolor background, elegant and graceful, 8k
+oriental|traditional Chinese beauty, classical hanfu, gentle expression, blooming peonies, soft watercolor background, elegant and graceful, 8k
+
+# ========== 金融数据 ==========
+金融图表|financial data visualization, stock market graph, upward trend, glowing green and red candlesticks, digital interface, dark background, futuristic, 8k
+finance|financial data visualization, stock market graph, upward trend, glowing green and red candlesticks, digital interface, dark background, futuristic, 8k
+
+# ========== 私募基金 ==========
+私募基金|private equity office, modern glass building, polished marble, professional investors, blurred trading floor background, corporate atmosphere, 8k
+pe|private equity office, modern glass building, polished marble, professional investors, blurred trading floor background, corporate atmosphere, 8k
+
+# ========== 财富象征 ==========
+财富象征|golden coins stacked, luxury watch, mahogany desk, soft warm lighting, wealth concept, high-end lifestyle photography, 8k
+wealth|golden coins stacked, luxury watch, mahogany desk, soft warm lighting, wealth concept, high-end lifestyle photography, 8k
+
+# ========== 商业会议 ==========
+商业会议|corporate boardroom meeting, diverse team in suits, holographic presentation, large screen showing financial data, modern office, cinematic, 8k
+business|corporate boardroom meeting, diverse team in suits, holographic presentation, large screen showing financial data, modern office, cinematic, 8k
+
+# ========== 新媒体封面 ==========
+新媒体封面|social media cover design, bold typography, split screen composition, vibrant gradient background, modern vector art, clickable thumbnail style, 4k
+cover|social media cover design, bold typography, split screen composition, vibrant gradient background, modern vector art, clickable thumbnail style, 4k
+
+# ========== 文章配图 ==========
+文章配图|blog post illustration, flat isometric view, laptop with charts, coffee cup, notebook, clean desk, bright office, content creation concept, 4k
+blog|blog post illustration, flat isometric view, laptop with charts, coffee cup, notebook, clean desk, bright office, content creation concept, 4k
+
+# ========== 公众号头图 ==========
+公众号头图|WeChat official account header, minimalist design, large title placeholder, soft gradient, professional and clean, corporate style, 4k
+wechat|WeChat official account header, minimalist design, large title placeholder, soft gradient, professional and clean, corporate style, 4k
+
+# ========== 百家号封面 ==========
+百家号封面|Baidu Baijiahao cover, news-style layout, breaking news banner, city skyline behind, bold red and blue, authoritative tone, 4k
+baijiahao|Baidu Baijiahao cover, news-style layout, breaking news banner, city skyline behind, bold red and blue, authoritative tone, 4k
+
+# ========== 股市 ==========
+股市|stock exchange trading floor, digital ticker board, traders in suits, intense atmosphere, green and red screens, financial district, 8k
+stock|stock exchange trading floor, digital ticker board, traders in suits, intense atmosphere, green and red screens, financial district, 8k
+
+# ========== 区块链 ==========
+区块链|blockchain technology, digital chain links, glowing binary code, futuristic server room, blue and purple neon, tech concept, 4k
+blockchain|blockchain technology, digital chain links, glowing binary code, futuristic server room, blue and purple neon, tech concept, 4k
+
+# ========== 基金理财 ==========
+基金理财|investment portfolio, growing plant from coins, piggy bank, upward arrow, warm lighting, financial growth concept, 4k
+fund|investment portfolio, growing plant from coins, piggy bank, upward arrow, warm lighting, financial growth concept, 4k
+
+# ========== 股票分析 ==========
+股票分析|stock analyst, large monitor with charts, professional trader, modern office, concentrated expression, financial tools, 4k
+analysis|stock analyst, large monitor with charts, professional trader, modern office, concentrated expression, financial tools, 4k
+
+# ========== 房地产 ==========
+房地产|luxury real estate, modern villa, swimming pool, sunset view, architectural design, high-end property, 8k
+realestate|luxury real estate, modern villa, swimming pool, sunset view, architectural design, high-end property, 8k
+
+# ========== 乡村振兴 ==========
+乡村振兴|rural revitalization, beautiful countryside, golden rice fields, traditional farmhouses, modern agricultural technology, sunny day, 4k
+rural|rural revitalization, beautiful countryside, golden rice fields, traditional farmhouses, modern agricultural technology, sunny day, 4k
+
+# ========== 科技 ==========
+科技|futuristic technology, AI concept, glowing neural network, digital brain, holographic interface, blue and white, innovation, 8k
+tech|futuristic technology, AI concept, glowing neural network, digital brain, holographic interface, blue and white, innovation, 8k
+
+# ========== 医疗 ==========
+医疗|modern hospital, medical professionals, advanced equipment, healthcare concept, clean white environment, caring atmosphere, 4k
+medical|modern hospital, medical professionals, advanced equipment, healthcare concept, clean white environment, caring atmosphere, 4k
+
+# ========== 保险 ==========
+保险|insurance concept, family protection, umbrella in rain, safe home, warm lighting, security and care, 4k
+insurance|insurance concept, family protection, umbrella in rain, safe home, warm lighting, security and care, 4k
