@@ -195,31 +195,6 @@ def get_admin_recharge_tier_keyboard(user_id):
     return InlineKeyboardMarkup(keyboard)
 
 
-def get_admin_recharge_tier_keyboard(user_id):
-    """管理员充值档位选择"""
-    keyboard = [
-        [
-            InlineKeyboardButton("体验档 $1\n100积分", callback_data=f"admin_tier_{user_id}_体验档"),
-        ],
-        [
-            InlineKeyboardButton("入门档 $5\n550积分", callback_data=f"admin_tier_{user_id}_入门档"),
-        ],
-        [
-            InlineKeyboardButton("标准档 $10\n1200积分", callback_data=f"admin_tier_{user_id}_标准档"),
-        ],
-        [
-            InlineKeyboardButton("进阶档 $25\n3200积分", callback_data=f"admin_tier_{user_id}_进阶档"),
-        ],
-        [
-            InlineKeyboardButton("超值档 $50\n7000积分", callback_data=f"admin_tier_{user_id}_超值档"),
-        ],
-        [
-            InlineKeyboardButton("⬅️ 返回", callback_data="back_to_menu"),
-        ],
-    ]
-    return InlineKeyboardMarkup(keyboard)
-
-
 def get_usage_keyboard():
     """使用说明内联按钮"""
     keyboard = [
