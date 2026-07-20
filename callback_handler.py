@@ -4,7 +4,7 @@
 """
 import os
 import httpx
-from telegram import Update
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 from keyboards import (
     get_main_keyboard,
@@ -16,6 +16,7 @@ from keyboards import (
     get_back_to_menu_keyboard,
     get_admin_panel_keyboard,
     get_pagination_keyboard,
+    get_admin_recharge_tier_keyboard,
 )
 from config import RECHARGE_TIERS, USDT_ADDRESS, ADMIN_IDS
 from handlers import user_states, is_admin
@@ -270,11 +271,18 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 InlineKeyboardButton(f"👁️ {name}", callback_data=f"admin_view_user_{u['user_id']}"),
                 InlineKeyboardButton(f"💰 充值", callback_data=f"admin_recharge_user_{u['user_id']}"),
             ])
-        kb_rows.append([InlineKeyboardButton("⬅️ 上一页", callback_data=f"admin_user_mgmt_page_{page-1}") if page > 1 else InlineKeyboardButton("🏠 返回", callback_data="back_to_menu")])
+        
+        # 分页按钮
+        pagination_buttons = []
+        if page > 1:
+            pagination_buttons.append(InlineKeyboardButton("⬅️ 上一页", callback_data=f"admin_user_mgmt_page_{page-1}"))
         if page < total_pages:
-            kb_rows[-1].append(InlineKeyboardButton("下一页 ➡️", callback_data=f"admin_user_mgmt_page_{page+1}"))
+            pagination_buttons.append(InlineKeyboardButton("下一页 ➡️", callback_data=f"admin_user_mgmt_page_{page+1}"))
+        if not pagination_buttons:
+            pagination_buttons.append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
         else:
-            kb_rows[-1].append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
+            pagination_buttons.append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
+        kb_rows.append(pagination_buttons)
         
         await message.edit_text(msg, reply_markup=InlineKeyboardMarkup(kb_rows))
 
@@ -306,21 +314,26 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         for u in page_users:
             name = u.get('first_name', '') or u.get('username', '') or f"用户{u['user_id']}"
             kb_rows.append([InlineKeyboardButton(f"💰 给 {name} 充值", callback_data=f"admin_recharge_user_{u['user_id']}")])
-        kb_rows.append([
-            InlineKeyboardButton("⬅️ 上一页", callback_data=f"admin_recharge_select_user_page_{page-1}") if page > 1 else InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"),
-        ])
+        
+        # 分页按钮
+        pagination_buttons = []
+        if page > 1:
+            pagination_buttons.append(InlineKeyboardButton("⬅️ 上一页", callback_data=f"admin_recharge_select_user_page_{page-1}"))
         if page < total_pages:
-            kb_rows[-1].append(InlineKeyboardButton("下一页 ➡️", callback_data=f"admin_recharge_select_user_page_{page+1}"))
+            pagination_buttons.append(InlineKeyboardButton("下一页 ➡️", callback_data=f"admin_recharge_select_user_page_{page+1}"))
+        if not pagination_buttons:
+            pagination_buttons.append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
         else:
-            kb_rows[-1].append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
+            pagination_buttons.append(InlineKeyboardButton("🏠 返回", callback_data="back_to_menu"))
+        kb_rows.append(pagination_buttons)
         
         await message.edit_text(msg, reply_markup=InlineKeyboardMarkup(kb_rows))
 
     elif data.startswith("admin_view_user_"):
         """查看用户详情"""
-        user_id = data.replace("admin_view_user_", "")
+        user_id_str = data.replace("admin_view_user_", "")
         from database import get_or_create_user
-        user = get_or_create_user(int(user_id))
+        user = get_or_create_user(int(user_id_str))
         if not user:
             await message.edit_text("❌ 用户不存在")
             return
@@ -337,9 +350,9 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     elif data.startswith("admin_recharge_user_"):
         """选择充值档位"""
-        user_id = data.replace("admin_recharge_user_", "")
+        user_id_str = data.replace("admin_recharge_user_", "")
         from database import get_or_create_user
-        user = get_or_create_user(int(user_id))
+        user = get_or_create_user(int(user_id_str))
         if not user:
             await message.edit_text("❌ 用户不存在")
             return
@@ -353,13 +366,13 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         await message.edit_text(
             msg,
-            reply_markup=get_admin_recharge_tier_keyboard(user_id),
+            reply_markup=get_admin_recharge_tier_keyboard(user['user_id']),
         )
 
     elif data.startswith("admin_tier_"):
         """管理员选择充值档位"""
         parts = data.split("_")
-        user_id = parts[2]
+        user_id_str = parts[2]
         tier_name = "_".join(parts[3:])
         
         from database import confirm_admin_recharge, get_or_create_user
@@ -369,10 +382,10 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             return
         
         total_credits = tier.get("credits", 0) + tier.get("bonus", 0)
-        success = confirm_admin_recharge(int(user_id), tier_name, tier.get("usdt", 0), total_credits)
+        success = confirm_admin_recharge(int(user_id_str), tier_name, tier.get("usdt", 0), total_credits)
         
         if success:
-            user = get_or_create_user(int(user_id))
+            user = get_or_create_user(int(user_id_str))
             await message.edit_text(
                 f"✅ 充值成功！\n\n"
                 f"用户: {user.get('first_name', '-') or user.get('username', '-')}\n"
