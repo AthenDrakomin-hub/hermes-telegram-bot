@@ -51,29 +51,36 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "🏠 主菜单",
                 reply_markup=kb,
             )
+        return
 
     elif data.startswith("size_"):
+        """处理尺寸选择（文生图/图生图）"""
         size = data.replace("size_", "")
         state = user_states.get(user_id, {})
         state["selected_size"] = size
         user_states[user_id] = state
 
-        func = state.get("func", "text2img")
+        func = state.get("func", "")
+        
+        # 图片相关功能才需要尺寸选择
         if func in ["text2img", "img2img"]:
             await message.edit_text(
                 "✅ 已选择尺寸: " + size + "\n请选择比例：",
                 reply_markup=get_image_ratio_keyboard(),
             )
         else:
-            await message.edit_reply_markup(reply_markup=None)
+            # 不应该进来，但如果进来了也要处理
+            await message.reply_text("❌ 操作错误，请重新开始")
+        return
 
     elif data.startswith("ratio_"):
+        """处理比例/视频比例选择"""
         ratio = data.replace("ratio_", "")
         state = user_states.get(user_id, {})
         state["selected_ratio"] = ratio
         user_states[user_id] = state
 
-        func = state.get("func", "UNKNOWN_MISSING_FUNC")
+        func = state.get("func", "")
         prompt = state.get("prompt", "")
         edit_prompt = state.get("edit_prompt", "")
         size = state.get("selected_size", "1K")
@@ -122,6 +129,10 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
             await execute_img2vid(message, user_id, image_url, prompt, ratio, context)
 
+        else:
+            await message.reply_text(f"❌ 未知的功能类型: {func}，请重新开始")
+        return
+
     elif data.startswith("recharge_"):
         tier_name = data.replace("recharge_", "")
         tier = RECHARGE_TIERS.get(tier_name, {})
@@ -144,6 +155,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode="Markdown",
             reply_markup=get_recharge_action_keyboard(),
         )
+        return
 
     elif data == "copy_usdt":
         # 点击复制 USDT 地址
@@ -167,6 +179,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 one_time_keyboard=False,
             ),
         )
+        return
 
     elif data == "usage_credits":
         await message.edit_text(
@@ -180,6 +193,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "• 积分永久有效，不过期",
             reply_markup=get_back_to_menu_keyboard(),
         )
+        return
 
     elif data == "usage_guide":
         await message.edit_text(
@@ -195,6 +209,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "• 生成失败会自动退款",
             reply_markup=get_back_to_menu_keyboard(),
         )
+        return
 
     # ==================== 管理员面板 ====================
     # 管理员白名单过滤：非管理员点击管理面板相关按钮时拦截
@@ -220,6 +235,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "🛠️ 管理面板\n\n选择你要执行的操作：",
             reply_markup=get_admin_panel_keyboard(),
         )
+        return
 
     elif data == "管理面板":
         # 兼容中文 callback_data
@@ -227,6 +243,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "🛠️ 管理面板\n\n选择你要执行的操作：",
             reply_markup=get_admin_panel_keyboard(),
         )
+        return
 
     elif data == "admin_today_stats":
         from database import get_today_stats
@@ -238,6 +255,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"📈 活跃用户: {stats['active_users']}"
         )
         await message.edit_text(msg, reply_markup=get_back_to_menu_keyboard())
+        return
 
     elif data.startswith("admin_user_mgmt_page_"):
         """用户管理分页"""
@@ -285,6 +303,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         kb_rows.append(pagination_buttons)
         
         await message.edit_text(msg, reply_markup=InlineKeyboardMarkup(kb_rows))
+        return
 
     elif data.startswith("admin_recharge_select_user_page_"):
         """充值选用户分页"""
@@ -328,6 +347,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         kb_rows.append(pagination_buttons)
         
         await message.edit_text(msg, reply_markup=InlineKeyboardMarkup(kb_rows))
+        return
 
     elif data.startswith("admin_view_user_"):
         """查看用户详情"""
@@ -347,6 +367,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             f"{'👑 管理员' if user.get('is_admin') else '👤 普通用户'}",
             reply_markup=get_back_to_menu_keyboard(),
         )
+        return
 
     elif data.startswith("admin_recharge_user_"):
         """选择充值档位"""
@@ -368,6 +389,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             msg,
             reply_markup=get_admin_recharge_tier_keyboard(user['user_id']),
         )
+        return
 
     elif data.startswith("admin_tier_"):
         """管理员选择充值档位"""
@@ -397,6 +419,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
         else:
             await message.edit_text("❌ 充值失败，请重试")
+        return
 
     # ==================== 流控管理回调 ====================
     elif data == "admin_toggle_ratelimit":
@@ -415,6 +438,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=get_back_to_menu_keyboard(),
             )
         conn.close()
+        return
 
     elif data.startswith("admin_set_global_rpm"):
         await message.edit_text(
@@ -425,6 +449,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         # 将用户状态切换到等待输入全局RPM
         user_states[query.from_user.id] = {"mode": "waiting_admin_rpm", "rpm_type": "global"}
+        return
 
     elif data.startswith("admin_set_per_user_rpm"):
         await message.edit_text(
@@ -434,6 +459,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=get_back_to_menu_keyboard(),
         )
         user_states[query.from_user.id] = {"mode": "waiting_admin_rpm", "rpm_type": "per_user"}
+        return
 
     elif data == "admin_toggle_half_price":
         from database import get_connection
@@ -451,6 +477,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 reply_markup=get_back_to_menu_keyboard(),
             )
         conn.close()
+        return
 
     # ==================== 充值确认/拒绝回调 ====================
     elif data.startswith("admin_confirm_recharge_"):
@@ -469,6 +496,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 f"❌ 充值请求 #{request_id} 处理失败，请重试",
                 reply_markup=get_back_to_menu_keyboard(),
             )
+        return
 
     elif data.startswith("admin_reject_recharge_"):
         parts = data.split("_")
@@ -486,12 +514,14 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 f"❌ 充值请求 #{request_id} 拒绝失败，请重试",
                 reply_markup=get_back_to_menu_keyboard(),
             )
+        return
 
     else:
         await message.edit_text(
             "🤔 未知操作，请重新选择",
             reply_markup=get_back_to_menu_keyboard(),
         )
+        return
 
 
 async def notify_admin_recharge(user_id, request_id, tier_name, req, context):
